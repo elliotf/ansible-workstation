@@ -1,10 +1,16 @@
 ---
 
-- name: "SourceCodePro: download and install"
+- name: "Fonts: ensure ~/.fonts exists"
+  file:
+    path: "{{ ansible_env.HOME }}/.fonts"
+    state: directory
+    mode: 0755
+
+- name: "Fonts: download and install SourceCodepro"
   get_url: url={{item}} mode=0440 dest="{{ ansible_env.HOME}}/.fonts"
   with_items:
     - "https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Italic.otf"
     - "https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.otf"
 
-- name: "SourceCodePro: rebuild font cache"
+- name: "Fonts: rebuild font cache"
   shell: fc-cache -f -v
