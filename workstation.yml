@@ -1,0 +1,88 @@
+---
+
+- name: Ubuntu workstation playbook
+  hosts: localhost
+  tasks:
+
+  - name: Remove packages that irritate me when they accidentally open
+    apt: name={{item}} state=absent purge=yes autoremove=yes
+    become: yes
+    with_items:
+      - libreoffice-common
+      - pidgin
+      - thunderbird
+
+  - name: Chrome: Add apt key
+    become: yes
+    apt_key:
+      url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+      state: present
+
+  - name: Chrome: Add apt repository
+    become: yes
+    apt_repository:
+      repo: deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main
+      filename: google-chrome
+      state: present
+
+  - name: Wine: Add apt key
+    become: yes
+    apt_key:
+      url: https://dl.winehq.org/wine-builds/Release.key
+      state: present
+
+  - name: Wine: Add apt repository
+    become: yes
+    apt_repository:
+      repo: deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main
+      filename: wine
+      state: present
+
+  - name: Add PPA repositories
+    become: yes
+    apt_repository: repo={{item}} state=present
+    with_items:
+      - ppa:tmate.io/archive
+
+  - name: Update apt cache
+    become: yes
+    apt:
+      upgrade: dist
+      update_cache: yes
+
+  - name: Install base packages
+    become: yes
+    apt: name={{item}} state=installed
+    with_items:
+      # basic
+      - ack-grep
+      - curl
+      - chromium-browser
+      - google-chrome-stable
+      - i3
+
+      # development
+      - build-essential
+      - git
+      - tmux
+      - ssh
+
+      # datastores
+      - mariadb-server
+      - postgresql
+
+      # entertainment
+      - steam
+      - ubuntu-restricted-extras
+      - vlc
+
+      # misc
+      - gimp
+      - gnumeric
+      - virtualbox
+      - wine-staging
+      - playonlinux
+
+      # hardware
+      - libratbag-tools
+      - ratbagd
