@@ -12,6 +12,7 @@
   with_items:
     # basic
     - chromium-browser
+    - gnome-terminal
     - i3
     - vlc
 
