@@ -1,0 +1,21 @@
+---
+
+- name: "Wine: Add apt key"
+  become: yes
+  apt_key:
+    url: "https://dl.winehq.org/wine-builds/Release.key"
+    state: present
+
+- name: "Wine: Add apt repository"
+  become: yes
+  apt_repository:
+    repo: "deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main"
+    filename: wine
+    state: present
+
+- name: "Wine: Install package"
+  become: yes
+  apt:
+    name: wine-staging
+    state: present
+    update_cache: yes

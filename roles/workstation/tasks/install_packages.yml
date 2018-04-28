@@ -1,0 +1,45 @@
+---
+
+- name: Update packages
+  become: yes
+  apt:
+    upgrade: dist
+    update_cache: yes
+
+- name: Install packages
+  become: yes
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    # basic
+    - chromium-browser
+    - i3
+    - vlc
+
+    # development
+    - ack-grep
+    - build-essential
+    - curl
+    - git
+    - ssh
+    - tmux
+    - vim
+
+    # datastores
+    - mariadb-server
+    - memcached
+    - postgresql
+
+    # entertainment
+    - steam
+    - ubuntu-restricted-extras
+
+    # misc
+    - gimp
+    - gnumeric
+    - virtualbox
+    - playonlinux
+    - flameshot
+
+    # hardware
+    - libratbag-tools
+    - ratbagd

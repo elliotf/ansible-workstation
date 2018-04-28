@@ -1,0 +1,10 @@
+---
+
+- name: Remove packages that irritate me when they accidentally open
+  apt: name={{item}} state=absent purge=yes autoremove=yes
+  become: yes
+  with_items:
+    - libreoffice-common
+    - pidgin
+    - thunderbird
+    - xfburn

@@ -1,0 +1,21 @@
+---
+
+- name: "Chrome: Add apt key"
+  become: yes
+  apt_key:
+    url: "https://dl-ssl.google.com/linux/linux_signing_key.pub"
+    state: present
+
+- name: "Chrome: Add apt repository"
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main"
+    filename: google-chrome
+    state: present
+
+- name: "Wine: Install package"
+  become: yes
+  apt:
+    name: google-chrome-stable
+    state: present
+    update_cache: yes
