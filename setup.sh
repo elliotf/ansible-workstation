@@ -2,7 +2,7 @@
 
 # run via:
 #
-#   wget -q -O - https://raw.githubusercontent.com/elliotf/ansible-workstation/master/setup.sh | bash
+#   wget -qO - https://raw.githubusercontent.com/elliotf/ansible-workstation/master/setup.sh | bash
 #
 PLAYBOOK_DIR=$HOME/work/ansible/workstation
 sudo apt -y install ansible git

@@ -5,7 +5,7 @@
   apt_repository:
     repo: "ppa:tmate.io/archive"
     state: present
-    codename: xenial # because it doesn't have bionic yet
+    codename: artful # because it doesn't have bionic yet
 
 - name: "tmate: Install package"
   become: yes
