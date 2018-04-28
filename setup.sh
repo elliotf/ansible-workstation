@@ -9,4 +9,4 @@ sudo apt -y install ansible git
 mkdir -p $PLAYBOOK_DIR
 git clone https://github.com/elliotf/ansible-workstation.git $PLAYBOOK_DIR
 cd $PLAYBOOK_DIR
-ansible-playbook install workstation.yml
+ansible-playbook workstation.yml

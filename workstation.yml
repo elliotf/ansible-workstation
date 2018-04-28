@@ -11,6 +11,7 @@
       - libreoffice-common
       - pidgin
       - thunderbird
+      - xfburn
 
   - name: "Chrome: Add apt key"
     become: yes
@@ -45,7 +46,7 @@
       state: present
       codename: xenial # because it doesn't have bionic yet
 
-  - name: Update apt cache
+  - name: Update packages
     become: yes
     apt:
       upgrade: dist
@@ -65,8 +66,9 @@
       # development
       - build-essential
       - git
-      - tmux
       - ssh
+      - tmux
+      - vim
 
       # datastores
       - mariadb-server
