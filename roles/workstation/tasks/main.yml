@@ -1,6 +1,5 @@
 ---
 - include: remove_packages.yml
 - include: chrome.yml
-- include: tmate.yml
 - include: wine.yml
 - include: install_packages.yml
