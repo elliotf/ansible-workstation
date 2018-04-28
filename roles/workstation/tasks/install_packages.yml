@@ -24,7 +24,6 @@
     - ssh
     - tmate
     - tmux
-    - vim
 
     # datastores
     - mariadb-server

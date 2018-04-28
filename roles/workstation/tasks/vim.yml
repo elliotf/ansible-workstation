@@ -1,0 +1,19 @@
+---
+
+- name: "Vim: Install package"
+  become: yes
+  apt:
+    name: vim
+    state: present
+    update_cache: yes
+
+- name: "Vim: clone config"
+  git:
+    repo: "https://github.com/elliotf/vim-config.git"
+    dest: "{{ ansible_env.HOME }}/.vim"
+
+- name: "Vim: symlink .vimrc"
+  file:
+    src: "{{ ansible_env.HOME }}/.vim/vimrc"
+    dest: "{{ ansible_env.HOME }}/.vimrc"
+    state: link
