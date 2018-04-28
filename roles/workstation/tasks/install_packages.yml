@@ -21,6 +21,7 @@
     - curl
     - git
     - ssh
+    - tmate
     - tmux
     - vim
 
