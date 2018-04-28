@@ -6,11 +6,23 @@
     state: directory
     mode: 0755
 
-- name: "Fonts: download and install SourceCodepro"
-  get_url: url={{item}} mode=0440 dest="{{ ansible_env.HOME}}/.fonts"
+- name: "Fonts: install fonts"
+  copy: src={{item}} dest="{{ ansible_env.HOME }}/.fonts"
   with_items:
-    - "https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Italic.otf"
-    - "https://github.com/adobe-fonts/source-code-pro/releases/download/variable-fonts/SourceCodeVariable-Roman.otf"
+    - SourceCodePro-Black.otf
+    - SourceCodePro-BlackIt.otf
+    - SourceCodePro-Bold.otf
+    - SourceCodePro-BoldIt.otf
+    - SourceCodePro-ExtraLight.otf
+    - SourceCodePro-ExtraLightIt.otf
+    - SourceCodePro-It.otf
+    - SourceCodePro-Light.otf
+    - SourceCodePro-LightIt.otf
+    - SourceCodePro-Medium.otf
+    - SourceCodePro-MediumIt.otf
+    - SourceCodePro-Regular.otf
+    - SourceCodePro-Semibold.otf
+    - SourceCodePro-SemiboldIt.otf
 
 - name: "Fonts: rebuild font cache"
   shell: fc-cache -f -v

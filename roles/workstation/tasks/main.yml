@@ -3,5 +3,6 @@
 - include: chrome.yml
 - include: wine.yml
 - include: install_packages.yml
+- include: vim.yml
 - include: fonts.yml
 #- include: ui.yml

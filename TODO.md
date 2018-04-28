@@ -10,6 +10,8 @@
 * dotfiles
   * .xsession
     * setxkbmap -option ctrl:nocaps
+  * gitconfig
+  * terminal settings
 * add packages via PPA
   * graphics drivers
 * add packages via other
