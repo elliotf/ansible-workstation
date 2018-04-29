@@ -6,7 +6,6 @@
     * cura access?
     * dialout?
     * libvirtd?
-  * disable passwd-based ssh?
 * dotfiles
   * .xsession
     * setxkbmap -option ctrl:nocaps
@@ -42,3 +41,4 @@
   * tmux
 * remove packages
 * vim config
+* disable passwd-based ssh?

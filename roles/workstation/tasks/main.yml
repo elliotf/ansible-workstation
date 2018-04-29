@@ -5,4 +5,5 @@
 - include: install_packages.yml
 - include: vim.yml
 - include: fonts.yml
+- include: ssh.yml
 #- include: ui.yml
