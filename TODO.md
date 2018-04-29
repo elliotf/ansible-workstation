@@ -9,8 +9,6 @@
     * setxkbmap -option ctrl:nocaps
   * gitconfig
   * terminal settings
-* conditionally install nvidia drivers via PPA?
-  * only if there is an nvidia graphics card in lspci
 * add packages via other
   * cura?
   * golang
@@ -45,3 +43,5 @@
   * libvirtd?
 * misc
   * set vim as default editor
+* conditionally install nvidia drivers via PPA?
+  * only if there is an nvidia graphics card in lspci

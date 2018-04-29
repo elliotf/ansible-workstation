@@ -8,4 +8,5 @@
 - include: ssh.yml
 - include: groups.yml
 - include: nvm.yml
+- include: nvidia.yml
 #- include: ui.yml

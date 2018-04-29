@@ -1,0 +1,14 @@
+---
+
+- name: "NVIDIA: Find PCI devices"
+  shell: lspci | grep -i nvidia | wc -l
+  register: pci_nvidia_devices
+
+- name: "NVIDIA: Add drivers PPA if we have a device"
+  apt_repository:
+    repo: "ppa:graphics-drivers/ppa"
+  when: pci_nvidia_devices >= 1
+
+- name: "NVIDIA: Install drivers if we have a device"
+  apt: name=nvidia-390 state=present update_cache=yes
+  when: pci_nvidia_devices >= 1
