@@ -9,20 +9,20 @@
 - name: "Fonts: install fonts"
   copy: src={{item}} dest="{{ ansible_env.HOME }}/.fonts"
   with_items:
-    - SourceCodePro-Black.otf
-    - SourceCodePro-BlackIt.otf
-    - SourceCodePro-Bold.otf
-    - SourceCodePro-BoldIt.otf
-    - SourceCodePro-ExtraLight.otf
-    - SourceCodePro-ExtraLightIt.otf
-    - SourceCodePro-It.otf
-    - SourceCodePro-Light.otf
-    - SourceCodePro-LightIt.otf
-    - SourceCodePro-Medium.otf
-    - SourceCodePro-MediumIt.otf
-    - SourceCodePro-Regular.otf
-    - SourceCodePro-Semibold.otf
-    - SourceCodePro-SemiboldIt.otf
+    - fonts/SourceCodePro-Black.otf
+    - fonts/SourceCodePro-BlackIt.otf
+    - fonts/SourceCodePro-Bold.otf
+    - fonts/SourceCodePro-BoldIt.otf
+    - fonts/SourceCodePro-ExtraLight.otf
+    - fonts/SourceCodePro-ExtraLightIt.otf
+    - fonts/SourceCodePro-It.otf
+    - fonts/SourceCodePro-Light.otf
+    - fonts/SourceCodePro-LightIt.otf
+    - fonts/SourceCodePro-Medium.otf
+    - fonts/SourceCodePro-MediumIt.otf
+    - fonts/SourceCodePro-Regular.otf
+    - fonts/SourceCodePro-Semibold.otf
+    - fonts/SourceCodePro-SemiboldIt.otf
 
 - name: "Fonts: rebuild font cache"
   shell: fc-cache -f -v
