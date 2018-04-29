@@ -1,5 +1,11 @@
 ---
 
+- name: Use faster mirror
+  become: yes
+  copy:
+    src: sources.list
+    dest: /etc/apt/sources.list
+
 - name: Update packages
   become: yes
   apt:
