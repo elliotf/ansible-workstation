@@ -3,7 +3,7 @@
 - name: "Vim: Install package"
   become: yes
   apt:
-    name: vim-nox
+    name: vim
     state: present
     update_cache: yes
 
