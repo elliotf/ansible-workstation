@@ -2,10 +2,6 @@
 
 * misc
   * set vim as default editor
-  * add user to groups
-    * cura access?
-    * dialout?
-    * libvirtd?
 * dotfiles
   * .xsession
     * setxkbmap -option ctrl:nocaps
@@ -42,3 +38,7 @@
 * remove packages
 * vim config
 * disable passwd-based ssh?
+* add user to groups
+  * cura access?
+  * dialout?
+  * libvirtd?

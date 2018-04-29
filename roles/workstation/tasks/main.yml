@@ -6,4 +6,5 @@
 - include: vim.yml
 - include: fonts.yml
 - include: ssh.yml
+- include: groups.yml
 #- include: ui.yml
