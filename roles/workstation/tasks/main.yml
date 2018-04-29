@@ -7,4 +7,5 @@
 - include: fonts.yml
 - include: ssh.yml
 - include: groups.yml
+- include: nvm.yml
 #- include: ui.yml

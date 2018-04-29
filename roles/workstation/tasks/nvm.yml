@@ -1,0 +1,13 @@
+---
+
+- name: "NVM: install repo"
+  git:
+    repo: "https://github.com/creationix/nvm.git"
+    dest: "{{ ansible_env.HOME }}/.nvm"
+    version: "v0.33.11"
+
+- name: "NVM: source in shell"
+  lineinfile: dest=~/.profile line="source ~/.nvm/nvm.sh" create=yes
+
+- name: "NVM: use autocomplete"
+  lineinfile: dest=~/.bashrc line="source ~/.nvm/bash_completion" create=yes

@@ -1,5 +1,9 @@
 # TODO
 
+* ssh
+  * pub/private keys
+  * authorized_keys
+  * config
 * misc
   * set vim as default editor
 * dotfiles
@@ -7,16 +11,12 @@
     * setxkbmap -option ctrl:nocaps
   * gitconfig
   * terminal settings
-* add packages via PPA
-  * graphics drivers
+* conditionally install nvidia drivers via PPA?
+  * only if there is an nvidia graphics card in lspci
 * add packages via other
-  * chrome
   * cura?
   * golang
-  * nvm
   * yarn
-* conditionally install nvidia drivers?
-  * only if there is an nvidia graphics card in lspci?
 
 # TODID
 * basic packages
@@ -35,6 +35,9 @@
   * vim
   * virtualbox
   * tmux
+* add packages via other
+  * chrome
+  * nvm
 * remove packages
 * vim config
 * disable passwd-based ssh?
