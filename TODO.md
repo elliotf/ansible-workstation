@@ -4,8 +4,6 @@
   * pub/private keys
   * authorized_keys
   * config
-* misc
-  * set vim as default editor
 * dotfiles
   * .xsession
     * setxkbmap -option ctrl:nocaps
@@ -45,3 +43,5 @@
   * cura access?
   * dialout?
   * libvirtd?
+* misc
+  * set vim as default editor

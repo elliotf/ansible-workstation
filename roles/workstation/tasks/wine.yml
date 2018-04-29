@@ -19,3 +19,6 @@
     name: wine-staging
     state: present
     update_cache: yes
+
+- name: "Wine: Add wine to PATH"
+  lineinfile: dest=~/.profile line='export PATH=$PATH:/opt/wine-staging/bin' create=yes

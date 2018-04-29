@@ -3,7 +3,7 @@
 - name: "Vim: Install package"
   become: yes
   apt:
-    name: vim
+    name: vim-nox
     state: present
     update_cache: yes
 
@@ -17,3 +17,9 @@
     src: "{{ ansible_env.HOME }}/.vim/vimrc"
     dest: "{{ ansible_env.HOME }}/.vimrc"
     state: link
+
+- name: "Vim: use bash's vim command line mode"
+  lineinfile: dest=~/.bashrc line="set -o vi" create=yes
+
+- name: "Vim: make vim the default editor"
+  lineinfile: dest=~/.profile line="export EDITOR=vim" create=yes
