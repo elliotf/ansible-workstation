@@ -1,7 +1,7 @@
 ---
 
 - name: Add supplemental groups
-  user: name={{ user }} groups={{ item }} append=yes
+  user: name={{ ansible_env.USER }} groups={{ item }} append=yes
   with_items:
     - dialout # for cura, arduino, etc.
     # lxd
